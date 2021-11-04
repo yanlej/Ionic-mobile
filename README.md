@@ -19,3 +19,5 @@ et pour demarrer:
 Ne pas oublier d'installer les dépendances du projet avec :
 
         npm install
+        
+Octobre 2021 - 6 mois de formation
