@@ -1,0 +1,21 @@
+<ion-app>
+  <ion-fab horizontal="start" vertical="center" slot="fixed">
+      <ion-fab-button color="dark">
+        <ion-icon md="menu-outline" ios="menu-outline"></ion-icon>
+      </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light">
+        <ion-icon name="film-outline" routerLink='films'></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="accessibility-outline" routerLink='/actors'></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="home-outline" routerLink='/home'></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-router-outlet></ion-router-outlet>
+
+</ion-app>

@@ -1,0 +1,42 @@
+<ion-app>
+  <!-- Header -->
+<ion-header translucent>
+  <!-- Titre de la page -->
+<ion-toolbar>
+<ion-title style="text-align: center;">Détails Films</ion-title>
+</ion-toolbar>
+
+
+</ion-header>
+  <!-- Fin Header -->
+
+  <!-- Debut Contenu -->
+<ion-content fullscreen>
+
+<ion-card style="text-align: center;">
+
+<img src='{{ actor.image }}'>
+
+<ion-card-header>
+<ion-card-title>
+{{ actor.name }}
+</ion-card-title>
+<ion-card-subtitle>
+{{ actor.birthDate }} - {{ actor.deathDate }}
+</ion-card-subtitle>
+</ion-card-header>
+
+<ion-card-content *ngFor="let film of films">
+<img [src]="film.image" style="width: 150px;">
+<br>
+<a routerLink="/films/details/{{ film.id }}">{{ film.fullTitle }}</a>
+</ion-card-content>
+
+<ion-button routerLink="/actors" size="small" color="tertiary">Retour Acteurs</ion-button>
+
+</ion-card>
+
+</ion-content>
+
+  <!-- Fin contenu -->
+</ion-app>

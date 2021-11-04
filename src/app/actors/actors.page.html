@@ -1,0 +1,34 @@
+<ion-app>
+  <!-- Header -->
+<ion-header translucent>
+  <!-- Titre de la page -->
+<ion-toolbar>
+<ion-title style="text-align: center;" >Acteurs</ion-title>
+</ion-toolbar>
+  <!-- Searchbar -->
+<ion-toolbar>
+<ion-searchbar (ionChange)="searchBarActeur($event)" animated></ion-searchbar>
+</ion-toolbar>
+
+</ion-header>
+  <!-- Fin Header -->
+
+  <!-- Debut Contenu -->
+<ion-content fullscreen>
+
+<!-- Je fait une boucle ngFor pour boucler sur mon tableau de liste de films -->
+<ion-card *ngFor="let actor of actors" style="text-align: center;">
+<!-- je rappele les resultat que je veux afficher grace à ma boucle -->
+<img [src]='actor.image'>
+<ion-card-header>
+<ion-card-title>{{ actor.title }}</ion-card-title>
+</ion-card-header>
+<ion-card-content>
+  {{ actor.description }}
+</ion-card-content>
+<ion-button routerLink="details/{{ actor.id }}" size="small" color="secondary">Details</ion-button>
+</ion-card>
+
+</ion-content>
+  <!-- Fin contenu -->
+</ion-app>

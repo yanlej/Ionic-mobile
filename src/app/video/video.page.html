@@ -1,0 +1,33 @@
+<ion-app>
+                                              <!-- Header -->
+  <ion-header translucent>
+                                              <!-- Titre de la page -->
+    <ion-toolbar>
+      <ion-title style="text-align: center;" >Films</ion-title>
+    </ion-toolbar>
+                                              <!-- Searchbar -->
+    <ion-toolbar>
+      <ion-searchbar [(ngModel)]= "searchTerm" animated></ion-searchbar>
+    </ion-toolbar>
+    
+  </ion-header>
+                                              <!-- Fin Header -->
+
+                                              <!-- Debut Contenu -->
+  <ion-content fullscreen>
+
+    <!-- Je fait une boucle ngFor pour boucler sur mon tableau de liste de films -->
+    <ion-card *ngFor="let film of films | filter: searchTerm" style="text-align: center;">
+      <!-- je rappele les resultat que je veux afficher grace à ma boucle -->
+      <img [src]='film.image'>
+      <ion-card-header>
+        <ion-card-title>{{ film.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{ film.year }}</ion-card-content>
+      <ion-button routerLink="details/{{ film.id }}" size="small" color="secondary">Details</ion-button>
+    </ion-card>
+        
+  </ion-content>
+                                              <!-- Fin contenu -->
+</ion-app>
+
